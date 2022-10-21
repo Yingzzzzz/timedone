@@ -14,7 +14,7 @@ touch Finallogdone.csv # Web usage information
 touch Finallogtranstart.csv # Package count since start catch file
 touch Finallogtranend.csv # Package count after transfer catch file
 
-touch WebLogg.csv #Final log
+touch WebLog.csv #Final log
 
 
 # Meaning of parameters 
@@ -77,6 +77,5 @@ fi
       sed -i "s|^[^,]*|`date '+%d/%m/%Y %H:%M'`|g" filename_dedup.csv
       cat filename_dedup.csv |  awk -F"[,]+" '{print $1,$4,$5,$7}' >> WebLog.csv
       cat Finallogtranend1.csv |  awk -F"[,]+" '{print $1,$3,$7}' >> WebLog.csv
-      sed -i 's/\s\+/,/g' WebLog.csv >WebLogg.csv
      done
    #   sed -i "s|^[^,]*|`date '+%d/%m/%Y %H:%M'`|g" bca.csv
